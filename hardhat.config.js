@@ -1,13 +1,15 @@
 require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
+require("dotenv").config({ path: ".env" });
 
-/** @type import('hardhat/config').HardhatUserConfig */
+const QUICKNODE_API_URL = process.env.QUICKNODE_API_URL;
+const PRIVATE_KEY_GOERLI = process.env.GOERLI_PRIVATE_KEY;
+
 module.exports = {
   solidity: "0.8.17",
-  networks:{
-    goerli:{
-      url: process.env.QUICKNODE_API_KEY_URL,
-      accounts: [process.env.GOERLI_PRIVATE_KEY]
-    }
-  }
+  networks: {
+    goerli: {
+      url: QUICKNODE_API_URL,
+      accounts: [PRIVATE_KEY_GOERLI],
+    },
+  },
 };

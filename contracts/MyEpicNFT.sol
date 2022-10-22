@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.17;
+pragma solidity ^0.8.0;
 
 // We first import some OpenZeppelin Contracts.
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -83,7 +83,7 @@ contract MyEpicNFT is ERC721URIStorage {
         function random(string memory input) internal pure returns (uint256){
             return uint256(keccak256(abi.encodePacked(input)));
         }
-        function MakeAnEpicNFT() public{
+        function makeAnEpicNFT() public{
             // Get the current tokenId, this starts at 0.
             uint256 newItemId = _tokenIds.current();
             // We go and randomly grab one word from each of the three arrays.

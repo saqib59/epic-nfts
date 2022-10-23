@@ -88,8 +88,8 @@ contract MyEpicNFT is ERC721URIStorage {
             uint256 newItemId = _tokenIds.current();
             // We go and randomly grab one word from each of the three arrays.
             string memory first = pickRandomFirstWord(newItemId);
-            string memory second = pickRandomFirstWord(newItemId);
-            string memory third = pickRandomFirstWord(newItemId);
+            string memory second = pickRandomSecondWord(newItemId);
+            string memory third = pickRandomThirdWord   (newItemId);
 
             // I concatenate it all together, and then close the <text> and <svg> tags.
             string memory finalSvg = string(abi.encodePacked(baseSvg,first,second,third,"</text></svg>"));
